@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-            <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
-            <link rel="icon" type="image/x-icon" href="favicon.ico">          
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet"  href="styles.css" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/8aa406ca29.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mi portfolio</title>
+
+    <link rel="stylesheet"  href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"
 </head>
+
 <body>
     <header>
         <div class="redes">
             <a href= "https://www.facebook.com/EstelaVeronicaMenendez/" target="_blank"><img src="Img/Face50.png"></a>        
             <a href="https://www.instagram.com/estelavm30" target="_blank"><img src="Img/Instagram50.png" ></a>
         </div>
-        <button class="login" type="button" class="btn btn-info"><b>Login</b></button>
+        <!--
+        <button class="login" type="button" class="btn btn-info" onclick="validar_usuario()"><b>Login</b></button>
+        -->
+      <form action="" class="formulario-login">
+        <input type="text" class="login" placeholder="Email">
+        <input type="password" class="login" placeholder="Contraseña">
+        <button class="login" id="color" class="btn btn-info">Entrar</button>
+      </form>
         <div class="logo">
            <img src="Img/Arg-programa.png">
         </div>
@@ -33,34 +36,47 @@
     <div class="secciones">
           <h3>Acerca de mí:</h3>
           <div class="button1">
-              <button class="Edit" type="button"><i class="fa-solid fa-pencil"></i></button>
+              <button class="Edit" type="button" onclick="editar()"><i class="fa-solid fa-pencil"></i></button>
           </div>
           <img class="foto" src="Img/mi-foto100.png" alt="Foto de Estela Verónica Menéndez">
 
-          <p class="">Soy Estela Verónica Menéndez, estoy comenzando mi camino como Full Stack Developer y además estoy estudiando la carrera de Analista en Programación en la Universidad Abierta Interamericana.</p>
+          <p id="text-acercade">Soy Estela Verónica Menéndez, estoy comenzando mi camino como Full Stack Developer y además estoy estudiando la carrera de Analista en Programación en la Universidad Abierta Interamericana.</p>
+          <div>
+                <input id="edit-acercade" type="text" oninput="myFunction2(this.value)" style="display: none;">
+          </div>
     </div>
     <div class="secciones">
           <h3>Experiencia:</h3>
           <div class="button2">
-          <button class="Edit" type="button"><i class="fa-solid fa-pencil"></i></button>
+          <button class="Edit" type="button" onclick="editar2()"><i class="fa-solid fa-pencil"></i></button>
           </div>
-          <p>Aún no cuento con experiencia en este campo pero estoy deseosa de comenzar a ejercer esta hermosa profesión.</p>
+          <p id="text-experiencia">Aún no cuento con experiencia en este campo pero estoy deseosa de comenzar a ejercer esta hermosa profesión.</p>
+          <div>
+            <input id="edit-experiencia" type="text" oninput="myFunction3(this.value)" style="display: none;">
+      </div>
     </div>
     <div class="secciones">
           <h3>Educación:</h3>
           <div class="button3">
           <br>
-          <button class="Edit" type="button"><i class="fa-solid fa-pencil"></i></button>
+          <button class="Edit" type="button" onclick="editar3()"><i class="fa-solid fa-pencil"></i></button>
+          <button class="Edit2" type="button" onclick="editar4()"><i class="fa-solid fa-pencil"></i></button>
           </div>
           <ul>
-          <li class="estudios"><img class="educacion" src="Img/inti.ico"> Realicé el curso introductorio Sé Programar brindado por el Ministerio de Desarrollo Productivo conjuntamente con el INTI (08/21-10/21)  Y posteriormente realicé la segunda etapa del curso,<br> YoProgramo, para ser Desarrolladora Full Stack Jr.(11/21-05/22). <br> </li>
-          <li class="estudios"><img class="educacion" src="Img/uai.png"> Actualmente cursando la Tecnicatura de Analista en Programación en la Universidad Abierta Interamericana (04/22-Actualidad).</li>
+          <li class="estudios" id="text-educacion1"><img class="educacion" src="Img/inti.ico"> Realicé el curso introductorio Sé Programar brindado por el Ministerio de Desarrollo Productivo conjuntamente con el INTI (08/21-10/21)  Y posteriormente realicé la segunda etapa del curso,<br> YoProgramo, para ser Desarrolladora Full Stack Jr.(11/21-05/22). <br> </li>
+          <li class="estudios" id="text-educacion2"><img class="educacion" src="Img/uai.png"> Actualmente cursando la Tecnicatura de Analista en Programación en la Universidad Abierta Interamericana (04/22-Actualidad).</li>
           </ul>
+          <div>
+            <input id="edit-educacion1" type="text" oninput="myFunction4(this.value)" style="display: none;">
+      </div>
+      <div>
+            <input id="edit-educacion2" type="text" oninput="myFunction5(this.value)" style="display: none;">
+      </div>
     </div>
     <div class="secciones">
           <h3>Habilidades:</h3>
           <div class="button4">
-          <button class="Edit" type="button"><i class="fa-solid fa-pencil"></i></button>
+            <button class="Edit" type="button" onclick="editar5()"><i class="fa-solid fa-pencil"></i></button>
           </div>
          <div >
            <ul class="lista" >
@@ -70,18 +86,152 @@
               <li class="habilidades"><b>ANGULAR </b><div class="container"><div class="barra">75%</div></div></li>
               <li class="habilidades"><b>MySQL </b><div class="container"><div class="barra">75%</div></div></li>
               <li class="habilidades"><b>JAVA</b> <div class="container"><div class="barra">75%</div></div></li>
+              <li class="habilidades"><b>C++</b> <div class="container"><div class="barra">75%</div></div></li>
+              <li class="habilidades" id="text-habilidades"></li>
            </ul>
          </div>
-    </div>
+         <div>
+            <input id="edit-habilidades" type="text" oninput="myFunction6(this.value)" style="display: none;">
+         </div>
+      </div>
+
     <div class="secciones">
           <h3>Proyectos:</h3>
           <div class="button5">
-          <button class="Edit" type="button"><i class="fa-solid fa-pencil"></i></button>
+          <button class="Edit" type="button" onclick="editar6()"><i class="fa-solid fa-pencil"></i></button>
     </div>
-          <p> El presente portfolio es mi primer proyecto.</p>
+          <p id="text-proyectos"> El presente portfolio es mi primer proyecto.</p>
     </div>
+    <div>
+      <input id="edit-proyectos" type="text" oninput="myFunction7(this.value)" style="display: none;">
+   </div>
+    <div class="secciones">
+          <h3>Información de contacto</h3>
+          <div class="button1">
+            <button class="Edit" type="button" onclick="editar7()"><i class="fa-solid fa-pencil"></i></button>
+        </div>
+          <p id="text-contacto">Si le interesa mi perfil por favor escribirme al siguiente mail: <b>estela.vm@hotmail.com.ar</b></p>  
+
+   
+    <div>
+      <input id="edit-contacto" type="text" oninput="myFunction8(this.value)" style="display: none;">
+   </div>
+</div>
+    
   <app-root></app-root>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/8aa406ca29.js" crossorigin="anonymous"></script>
+  
+  
+  <script>
+  
+      function editar(){
+      document.getElementById("edit-acercade").style.display="block";
+      let text = document.getElementById("text-acercade").innerText;
+       console.log(text);
+      };
+
+      function myFunction2(valor){
+      document.getElementById("text-acercade").innerText=valor;
+      };
+
+      let textarea=document.getElementById("edit-acercade")
+      textarea.addEventListener('keyup', (e) => {
+      if (e.key=="Enter"){
+          document.getElementById("edit-acercade").style.display="none"}});
+
+      function editar2(){
+      document.getElementById("edit-experiencia").style.display="block";
+      let text = document.getElementById("text-experiencia").innerText;
+       console.log(text);
+      };
+
+      function myFunction3(valor){
+      document.getElementById("text-experiencia").innerText=valor;
+      };
+
+      let textarea2=document.getElementById("edit-experiencia")
+      textarea2.addEventListener('keyup', (e) => {
+      if (e.key=="Enter"){
+          document.getElementById("edit-experiencia").style.display="none"}});
+
+          function editar3(){
+      document.getElementById("edit-educacion1").style.display="block";
+      let text = document.getElementById("text-educacion1").innerText;
+       console.log(text);
+      };
+
+      function myFunction4(valor){
+      document.getElementById("text-educacion1").innerText=valor;
+      };
+
+      let textarea3=document.getElementById("edit-educacion1")
+      textarea3.addEventListener('keyup', (e) => {
+      if (e.key=="Enter"){
+          document.getElementById("edit-educacion1").style.display="none"}});
+      
+      function editar4(){
+      document.getElementById("edit-educacion2").style.display="block";
+      let text = document.getElementById("text-educacion2").innerText;
+       console.log(text);
+      };
+
+      function myFunction5(valor){
+      document.getElementById("text-educacion2").innerText=valor;
+      };
+
+      let textarea4=document.getElementById("edit-educacion2")
+      textarea4.addEventListener('keyup', (e) => {
+      if (e.key=="Enter"){
+          document.getElementById("edit-educacion2").style.display="none"}});
+
+          function editar5(){
+      document.getElementById("edit-habilidades").style.display="block";
+      let text = document.getElementById("text-habilidades").innerText;
+       console.log(text);
+      };
+
+      function myFunction6(valor){
+      document.getElementById("text-habilidades").innerText=valor;
+      };
+
+      let textarea5=document.getElementById("edit-habilidades")
+      textarea5.addEventListener('keyup', (e) => {
+      if (e.key=="Enter"){
+          document.getElementById("edit-habilidades").style.display="none"}});
+
+          function editar6(){
+      document.getElementById("edit-proyectos").style.display="block";
+      let text = document.getElementById("text-proyectos").innerText;
+       console.log(text);
+      };
+
+      function myFunction7(valor){
+      document.getElementById("text-proyectos").innerText=valor;
+      };
+
+      let textarea6=document.getElementById("edit-proyectos")
+      textarea6.addEventListener('keyup', (e) => {
+      if (e.key=="Enter"){
+          document.getElementById("edit-proyectos").style.display="none"}});
+
+          function editar7(){
+      document.getElementById("edit-contacto").style.display="block";
+      let text = document.getElementById("text-contacto").innerText;
+       console.log(text);
+      };
+
+      function myFunction8(valor){
+      document.getElementById("text-contacto").innerText=valor;
+      };
+
+      let textarea7=document.getElementById("edit-contacto")
+      textarea7.addEventListener('keyup', (e) => {
+      if (e.key=="Enter"){
+          document.getElementById("edit-contacto").style.display="none"}});
+
+ 
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
